@@ -39,6 +39,7 @@ def generate_prompt(state_scores):
 
 # Initialize FastAPI app
 app = FastAPI()
+google_api_key = os.environ.get("GOOGLE_API_KEY")
 
 # Enable CORS
 app.add_middleware(
@@ -52,11 +53,9 @@ app.add_middleware(
 # Route for chatbot interaction
 @app.post("/chat/")
 async def chat(
-    google_api_key: str = Form(...),
     user_input: str = Form(...),
     depression: int = Form(0),
     anxiety: int = Form(0),
-    bipolar: int = Form(0),
     stress: int = Form(0)
 ):
     try:
@@ -74,7 +73,6 @@ async def chat(
         state_scores = {
             "depression": depression,
             "anxiety": anxiety,
-            "bipolar": bipolar,
             "stress": stress
         }
         dynamic_prompt = generate_prompt(state_scores)
