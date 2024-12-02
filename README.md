@@ -22,14 +22,13 @@ AuraPura_chatbot_api is an API for a LangChain-based chatbot designed to provide
 ### Step 1: Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd AuraPura_chatbot_api
+# AURA PURA Chatbot API
 
-Step 2: Install Dependencies
-Install the required dependencies using requirements.txt:
+## Step 2: Install Dependencies
 
-bash
-Copy code
+Install the required dependencies using `requirements.txt`:
+
+```bash
 pip install -r requirements.txt
 Step 3: Configure Environment Variables
 Set up your environment variables for the Gemini API and other configurations:
