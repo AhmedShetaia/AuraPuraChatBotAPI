@@ -5,6 +5,11 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import ConversationChain
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.memory import ConversationSummaryMemory
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from the .env file
+load_dotenv()
 
 # Define calming prompts for each state
 calm_prompts = {
@@ -39,7 +44,8 @@ def generate_prompt(state_scores):
 
 # Initialize FastAPI app
 app = FastAPI()
-google_api_key = os.environ.get("GOOGLE_API_KEY")
+
+google_api_key =  os.getenv("GOOGLE_API_KEY")
 
 # Enable CORS
 app.add_middleware(
@@ -49,7 +55,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # Route for chatbot interaction
 @app.post("/chat/")
 async def chat(
@@ -58,6 +63,8 @@ async def chat(
     anxiety: int = Form(0),
     stress: int = Form(0)
 ):
+    if not (0 <= depression <= 100) or not (0 <= anxiety <= 100) or not (0 <= stress <= 100):
+        return JSONResponse({"error": "State values must be between 0 and 100."}, status_code=400)
     try:
         # Initialize memory and chatbot
         memory = ConversationSummaryMemory(
@@ -75,7 +82,7 @@ async def chat(
             "anxiety": anxiety,
             "stress": stress
         }
-        dynamic_prompt = generate_prompt(state_scores)
+        dynamic_prompt = "Reply in the same language sent to you and dont mension scores."+generate_prompt(state_scores)
 
         # Generate response
         response = chatbot.run(dynamic_prompt + f"\n\nUser: {user_input}\nBot:")
