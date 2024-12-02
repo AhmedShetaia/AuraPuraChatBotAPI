@@ -1,21 +1,30 @@
-AuraPura_chatbot_api
+# AuraPura_chatbot_api
+
 AuraPura_chatbot_api is an API for a LangChain-based chatbot designed to provide tailored responses to users based on their emotional states, such as anxiety, depression, and stress. The API integrates Gemini's response-generation capabilities and aims to support users emotionally and enhance their well-being.
 
-Key Features
-Emotionally Tailored Responses: Generates specific responses based on the user's emotional input.
-Gemini API Integration: Leverages Gemini's capabilities through LangChain to create meaningful interactions.
-Support for Key Emotional States: Anxiety, depression, and stress.
-Extendable: Easily extendable to support additional emotional states or features.
-Dockerized: Simplified deployment with Docker and Docker Compose.
-Setup and Installation
-Prerequisites
-Python 3.8 or higher
-Docker and Docker Compose installed on your machine
-Step 1: Clone the Repository
-bash
-Copy code
+## Key Features
+
+- **Emotionally Tailored Responses**: Generates specific responses based on the user's emotional input.
+- **Gemini API Integration**: Leverages Gemini's capabilities through LangChain to create meaningful interactions.
+- **Support for Key Emotional States**: Anxiety, depression, and stress.
+- **Extendable**: Easily extendable to support additional emotional states or features.
+- **Dockerized**: Simplified deployment with Docker and Docker Compose.
+
+---
+
+## Setup and Installation
+
+### Prerequisites
+
+- Python 3.8 or higher
+- Docker and Docker Compose installed on your machine
+
+### Step 1: Clone the Repository
+
+```bash
 git clone <repository-url>
 cd AuraPura_chatbot_api
+
 Step 2: Install Dependencies
 Install the required dependencies using requirements.txt:
 
