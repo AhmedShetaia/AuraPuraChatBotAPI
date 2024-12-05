@@ -89,7 +89,7 @@ http://<your-server-address>:8080
 
 ### Endpoint: /chat
 
-**Request Example
+#### Request Example
 
 ```bash
 curl -X 'POST' \
@@ -99,7 +99,7 @@ curl -X 'POST' \
   -d 'user_input=I%20am%20not%20ok&depression=100&anxiety=0&stress=0'
 ```
 
-**Response Example
+#### Response Example
 
 ```json
 {
