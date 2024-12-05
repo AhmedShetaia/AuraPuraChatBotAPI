@@ -38,9 +38,9 @@ pip install -r requirements.txt
 
 Set up your environment variables for the Gemini API and other configurations:
 
-- Create a .env file in the root directory.
+- Create a `.env` file in the root directory.
 - Add your environment variables:
-- 
+
 ```env
 GEMINI_API_KEY=your_api_key_here
 ```
