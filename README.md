@@ -52,8 +52,6 @@ Run the API using uvicorn:
 uvicorn main:app --host 0.0.0.0 --port 8080
 ```
 
----
-
 ## Docker Instructions
 
 ### Step 1: Build and Run Using docker-compose.yml
@@ -80,7 +78,6 @@ services:
 ```bash
 docker-compose up --build
 ```
----
 
 ## Usage
 ### Base URL
@@ -109,7 +106,6 @@ curl -X 'POST' \
   "response": "I hear you. It sounds like you're going through something really tough right now. I'm here to listen, without judgment. Just know that you're not alone, and even though it feels overwhelming right now, feelings do change. I'm here for you."
 }
 ```
----
 
 ## File Structure
 - `main.py`: Contains the core logic and routes for the API.
